@@ -1,0 +1,107 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+@layer base {
+  body {
+    @apply bg-light-200 dark:bg-dark-200 text-gray-900 dark:text-light-300 transition-colors duration-200;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display leading-tight;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl font-bold;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl font-semibold;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl font-medium;
+  }
+}
+
+/* Supporting Hindi text */
+.hindi-text {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Custom component classes */
+@layer components {
+  .card {
+    @apply bg-white dark:bg-dark-100 rounded-xl shadow-md dark:shadow-none border border-transparent dark:border-dark-100 overflow-hidden transition-all duration-300;
+  }
+  
+  .card-hover {
+    @apply hover:shadow-lg dark:hover:border-accent-indigo/20 dark:hover:shadow-accent-indigo/5 transform hover:-translate-y-1 transition-all duration-300;
+  }
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r;
+  }
+  
+  .btn {
+    @apply px-6 py-3 rounded-lg transition-all duration-200 font-medium;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-accent-indigo to-accent-purple text-white hover:shadow-lg hover:shadow-accent-indigo/20;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border border-accent-indigo dark:border-accent-purple text-accent-indigo dark:text-accent-purple hover:bg-accent-indigo/5 dark:hover:bg-accent-purple/10;
+  }
+}
+
+/* Gradient backgrounds */
+.bg-gradient-1 {
+  @apply bg-gradient-to-br from-accent-indigo/10 to-accent-purple/10 dark:from-accent-indigo/20 dark:to-accent-purple/20;
+}
+
+.bg-gradient-2 {
+  @apply bg-gradient-to-br from-accent-blue/10 to-accent-teal/10 dark:from-accent-blue/20 dark:to-accent-teal/20;
+}
+
+.bg-gradient-3 {
+  @apply bg-gradient-to-br from-accent-pink/10 to-accent-amber/10 dark:from-accent-pink/20 dark:to-accent-amber/20;
+}
+
+/* Animations */
+.animate-in {
+  @apply opacity-0 translate-y-4;
+  animation: animate-in 0.6s ease-out forwards;
+}
+
+@keyframes animate-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glass effect */
+.glass {
+  @apply bg-white/30 dark:bg-dark-200/50 backdrop-blur-lg backdrop-saturate-150 border border-white/20 dark:border-dark-100;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400/50 dark:bg-gray-600/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500/70 dark:bg-gray-500/70;
+}
